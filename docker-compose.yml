@@ -13,7 +13,7 @@ services:
   book-catalog:
     image: book-catalog
     build: 
-      context: ./book-catalog
+      context: ./book_catalog
       dockerfile: Dockerfile
     container_name: book-catalog
     ports:
@@ -26,7 +26,7 @@ services:
   inventory-management:
     image: inventory-management
     build: 
-      context: ./inventory-management
+      context: ./inventory_management
       dockerfile: Dockerfile
     container_name: inventory-management
     ports:
