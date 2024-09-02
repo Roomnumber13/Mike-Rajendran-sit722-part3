@@ -19,7 +19,7 @@ spec:
         - containerPort: 8000
         env:
         - name: DATABASE_URL
-              value: "postgresql://sit722_part3_qxdp_user:Owm7kCzRK4JyGTtMHWzKfQuHtQ9y2B7p@dpg-cralh62j1k6c73cgp8t0-a.singapore-postgres.render.com/sit722_part3_qxdp"
+          value: "postgresql://sit722_part3_qxdp_user:Owm7kCzRK4JyGTtMHWzKfQuHtQ9y2B7p@dpg-cralh62j1k6c73cgp8t0-a.singapore-postgres.render.com/sit722_part3_qxdp"
 
 ---
 
@@ -44,7 +44,7 @@ spec:
         - containerPort: 8002
         env:
         - name: DATABASE_URL
-              value: "postgresql://sit722_part3_qxdp_user:Owm7kCzRK4JyGTtMHWzKfQuHtQ9y2B7p@dpg-cralh62j1k6c73cgp8t0-a.singapore-postgres.render.com/sit722_part3_qxdp"
+          value: "postgresql://sit722_part3_qxdp_user:Owm7kCzRK4JyGTtMHWzKfQuHtQ9y2B7p@dpg-cralh62j1k6c73cgp8t0-a.singapore-postgres.render.com/sit722_part3_qxdp"
 ---
 apiVersion: v1
 kind: Service
