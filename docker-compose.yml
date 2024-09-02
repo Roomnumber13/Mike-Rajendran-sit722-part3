@@ -30,7 +30,7 @@ services:
       dockerfile: Dockerfile
     container_name: inventory-management
     ports:
-     - "8002:80002"
+     - "8002:8002"
     environment:
       - PORT=8002
       - DATABASE_URL= "postgresql://admin:E5OJuKRE14iotwfsvHwJeqsjaKK1eKmO@dpg-cq0nb2aju9rs73b0500g-a.oregon-postgres.render.com/part2"
