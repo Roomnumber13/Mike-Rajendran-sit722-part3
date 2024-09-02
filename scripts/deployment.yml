@@ -45,7 +45,9 @@ spec:
         env:
         - name: DATABASE_URL
           value: "postgresql://sit722_part3_qxdp_user:Owm7kCzRK4JyGTtMHWzKfQuHtQ9y2B7p@dpg-cralh62j1k6c73cgp8t0-a.singapore-postgres.render.com/sit722_part3_qxdp"
+
 ---
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -59,7 +61,8 @@ spec:
       targetPort: 8000
   type: NodePort
 
-  ---
+---
+
 apiVersion: v1
 kind: Service
 metadata:
