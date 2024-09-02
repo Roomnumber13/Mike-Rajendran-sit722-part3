@@ -1,1 +1,39 @@
-# Your Solution
+version: '3'
+services:
+
+  db:
+    image: postgres:latest
+    container_name: db
+    environment:
+      - POSTGRES_URL=
+    ports:
+     - "5432:5432"
+    restart: always
+
+  book-catalog:
+    image: book-catalog
+    build: 
+      context: ./book-catalog
+      dockerfile: Dockerfile
+    container_name: book-catalog
+    ports:
+     - "8000:8000"
+    environment:
+      - PORT=8000
+      - DATABASE_URL=
+    restart: "no"
+
+  inventory-management:
+    image: inventory-management
+    build: 
+      context: ./inventory-management
+      dockerfile: Dockerfile
+    container_name: inventory-management
+    ports:
+     - "8002:80002"
+    environment:
+      - PORT=8002
+      - DATABASE_URL=
+    depends_on:
+      - db
+    restart: "no"
