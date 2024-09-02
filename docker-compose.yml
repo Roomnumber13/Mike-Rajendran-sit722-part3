@@ -5,7 +5,7 @@ services:
     image: postgres:latest
     container_name: db
     environment:
-      - POSTGRES_URL=
+      - POSTGRES_URL= "postgresql://sit722_part3_qxdp_user:Owm7kCzRK4JyGTtMHWzKfQuHtQ9y2B7p@dpg-cralh62j1k6c73cgp8t0-a.singapore-postgres.render.com/sit722_part3_qxdp"
     ports:
      - "5432:5432"
     restart: always
@@ -20,7 +20,7 @@ services:
      - "8000:8000"
     environment:
       - PORT=8000
-      - DATABASE_URL=
+      - DATABASE_URL= "postgresql://admin:E5OJuKRE14iotwfsvHwJeqsjaKK1eKmO@dpg-cq0nb2aju9rs73b0500g-a.oregon-postgres.render.com/part2"
     restart: "no"
 
   inventory-management:
@@ -33,7 +33,7 @@ services:
      - "8002:80002"
     environment:
       - PORT=8002
-      - DATABASE_URL=
+      - DATABASE_URL= "postgresql://admin:E5OJuKRE14iotwfsvHwJeqsjaKK1eKmO@dpg-cq0nb2aju9rs73b0500g-a.oregon-postgres.render.com/part2"
     depends_on:
       - db
     restart: "no"
