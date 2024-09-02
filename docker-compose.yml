@@ -5,7 +5,9 @@ services:
     image: postgres:latest
     container_name: db
     environment:
-      - DATABASE_URL= "postgresql://sit722_part3_qxdp_user:Owm7kCzRK4JyGTtMHWzKfQuHtQ9y2B7p@dpg-cralh62j1k6c73cgp8t0-a.singapore-postgres.render.com/sit722_part3_qxdp"
+      - POSTGRES_USER: sit722_part3_qxdp_user
+      - POSTGRES_PASSWORD: Owm7kCzRK4JyGTtMHWzKfQuHtQ9y2B7p
+      - POSTGRES_DB: sit722_part3_qxdp 
     ports:
      - "5432:5432"
     restart: always
