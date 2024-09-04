@@ -59,7 +59,7 @@ spec:
     - protocol: TCP
       port: 8000
       targetPort: 8000
-  type: NodePort
+  type: LoadBalancer
 
 ---
 
@@ -74,4 +74,4 @@ spec:
     - protocol: TCP
       port: 8002
       targetPort: 8002
-  type: NodePort
+  type: LoadBalancer
