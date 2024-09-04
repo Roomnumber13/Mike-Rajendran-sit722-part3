@@ -1,6 +1,6 @@
 # Dockerfile for book_catalog microservice
 # Use the official Python image from the Docker Hub
-FROM python:3.10-slim
+FROM --platform=linux/arm64 python:3.10-slim
 
 # Set the working directory in the container
 WORKDIR /app
