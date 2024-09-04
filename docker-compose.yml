@@ -2,7 +2,6 @@ version: '3'
 services:
 
   db:
-    platform: linux/amd64 
     image: postgres:latest
     container_name: db
     environment:
@@ -13,8 +12,7 @@ services:
       - "5432:5432"
     restart: always
 
-  book-catalog:
-    platform: linux/amd64 
+  book-catalog: 
     image: book-catalog
     build: 
       context: ./book_catalog
@@ -27,8 +25,7 @@ services:
       - DATABASE_URL=postgresql://admin:E5OJuKRE14iotwfsvHwJeqsjaKK1eKmO@dpg-cq0nb2aju9rs73b0500g-a.oregon-postgres.render.com/part2
     restart: "no"
 
-  inventory-management:
-    platform: linux/amd64 
+  inventory-management: 
     image: inventory-management
     build: 
       context: ./inventory_management
