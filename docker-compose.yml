@@ -5,11 +5,11 @@ services:
     image: postgres:latest
     container_name: db
     environment:
-      - POSTGRES_USER: sit722_part3_qxdp_user
-      - POSTGRES_PASSWORD: Owm7kCzRK4JyGTtMHWzKfQuHtQ9y2B7p
-      - POSTGRES_DB: sit722_part3_qxdp 
+      POSTGRES_USER: sit722_part3_qxdp_user
+      POSTGRES_PASSWORD: Owm7kCzRK4JyGTtMHWzKfQuHtQ9y2B7p
+      POSTGRES_DB: sit722_part3_qxdp 
     ports:
-     - "5432:5432"
+      - "5432:5432"
     restart: always
 
   book-catalog:
@@ -19,10 +19,10 @@ services:
       dockerfile: Dockerfile
     container_name: book-catalog
     ports:
-     - "8000:8000"
+      - "8000:8000"
     environment:
       - PORT=8000
-      - DATABASE_URL= "postgresql://admin:E5OJuKRE14iotwfsvHwJeqsjaKK1eKmO@dpg-cq0nb2aju9rs73b0500g-a.oregon-postgres.render.com/part2"
+      - DATABASE_URL=postgresql://admin:E5OJuKRE14iotwfsvHwJeqsjaKK1eKmO@dpg-cq0nb2aju9rs73b0500g-a.oregon-postgres.render.com/part2
     restart: "no"
 
   inventory-management:
@@ -32,10 +32,10 @@ services:
       dockerfile: Dockerfile
     container_name: inventory-management
     ports:
-     - "8002:8002"
+      - "8002:8002"
     environment:
       - PORT=8002
-      - DATABASE_URL= "postgresql://admin:E5OJuKRE14iotwfsvHwJeqsjaKK1eKmO@dpg-cq0nb2aju9rs73b0500g-a.oregon-postgres.render.com/part2"
+      - DATABASE_URL=postgresql://admin:E5OJuKRE14iotwfsvHwJeqsjaKK1eKmO@dpg-cq0nb2aju9rs73b0500g-a.oregon-postgres.render.com/part2
     depends_on:
       - db
     restart: "no"
