@@ -3,7 +3,7 @@
 FROM --platform=linux/arm64 python:3.10-slim
 
 # Set the working directory in the container
-WORKDIR /app
+WORKDIR /inventory_management
 
 # Copy the requirements.txt file into the container at /app
 COPY requirements.txt .
@@ -12,7 +12,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application code into the container
-COPY inventory_management/ .
+COPY app/ .
 
 # Set the command to run the application
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8002"]
