@@ -1,18 +1,13 @@
-# Dockerfile for book_catalog microservice
-# Use the official Python image from the Docker Hub
-FROM --platform=linux/arm64 python:3.10-slim
+# Dockerfile for inventory_management microservice
+FROM python:3.10-slim
 
-# Set the working directory in the container
 WORKDIR /app
 
-# Copy the requirements.txt file into the container at /app
 COPY requirements.txt .
 
-# Install the dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application code into the container
-COPY inventory_management /app/inventory_management
+# Adjust the path to point to the correct directory
+COPY app /app/app
 
-# Set the command to run the application
-CMD ["uvicorn", "inventory_management.main:app", "--host", "0.0.0.0", "--port", "8002"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8002"]

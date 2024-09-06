@@ -10,9 +10,10 @@ services:
       POSTGRES_DB: sit722_part3_qxdp 
     ports:
       - "5432:5432"
-    restart: always
+    restart: "on-failure"
 
   book-catalog: 
+    platform: linux/amd64
     image: book-catalog
     build: 
       context: ./book_catalog
@@ -22,10 +23,11 @@ services:
       - "8000:8000"
     environment:
       - PORT=8000
-      - DATABASE_URL=postgresql://admin:E5OJuKRE14iotwfsvHwJeqsjaKK1eKmO@dpg-cq0nb2aju9rs73b0500g-a.oregon-postgres.render.com/part2
-    restart: "no"
+      - DATABASE_URL=postgresql://sit722_part3_qxdp_user:Owm7kCzRK4JyGTtMHWzKfQuHtQ9y2B7p@db:5432/sit722_part3_qxdp
+    restart: "on-failure"
 
   inventory-management: 
+    platform: linux/amd64  
     image: inventory-management
     build: 
       context: ./inventory_management
@@ -35,7 +37,7 @@ services:
       - "8002:8002"
     environment:
       - PORT=8002
-      - DATABASE_URL=postgresql://admin:E5OJuKRE14iotwfsvHwJeqsjaKK1eKmO@dpg-cq0nb2aju9rs73b0500g-a.oregon-postgres.render.com/part2
+      - DATABASE_URL=postgresql://sit722_part3_qxdp_user:Owm7kCzRK4JyGTtMHWzKfQuHtQ9y2B7p@db:5432/sit722_part3_qxdp
     depends_on:
       - db
-    restart: "no"
+    restart: "on-failure"
